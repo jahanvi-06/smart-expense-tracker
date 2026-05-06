@@ -1,0 +1,55 @@
+.tx-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tx-type-toggle {
+  display: flex;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  gap: 4px;
+}
+
+.tx-type-btn {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.tx-type-btn--active.tx-type-btn--expense {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.tx-type-btn--active.tx-type-btn--income {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.tx-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tx-form__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .tx-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
