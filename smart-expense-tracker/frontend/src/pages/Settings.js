@@ -8,7 +8,7 @@ import Modal from '../components/UI/Modal';
 import toast from 'react-hot-toast';
 import './Settings.css';
 
-const CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'INR', 'BRL', 'MXN', 'CHF'];
+const CURRENCIES = ['INR', 'USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'BRL', 'MXN', 'CHF'];
 
 const Settings = () => {
   const { user, updateUser } = useAuth();
@@ -19,7 +19,7 @@ const Settings = () => {
   // Profile form
   const [profile, setProfile] = useState({
     name: user?.name || '',
-    currency: user?.currency || 'USD',
+    currency: user?.currency || 'INR',
     monthlyBudget: user?.monthlyBudget || ''
   });
   const [profileLoading, setProfileLoading] = useState(false);
@@ -39,7 +39,7 @@ const Settings = () => {
 
   useEffect(() => {
     if (user) {
-      setProfile({ name: user.name, currency: user.currency || 'USD', monthlyBudget: user.monthlyBudget || '' });
+      setProfile({ name: user.name, currency: user.currency || 'INR', monthlyBudget: user.monthlyBudget || '' });
     }
   }, [user]);
 
